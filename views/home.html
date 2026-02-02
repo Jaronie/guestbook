@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guestbook Form</title>
+    <!-- css file -->
+    <link rel="stylesheet" href="/styles/styles.css">
+    <!-- script -->
+    <script src="/js/app.js" defer></script>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/me.jpg">
 </head>
 <body>
+    <main>
+
+        <header>
+            <h1>Contact Form</h1>
+        </header>
+        <form id="guest-form">
+        <label for="fname">
+          First Name:
+          <input type="text" id="fname" name="fname">
+        </label>
+        <label for="lname">
+          Last Name:
+          <input type="text" id="lname" name="lname">
+        </label>
+        <label for="Company">
+          Company:
+          <input type="text" id="Company" name="company">
+        </label>
+        <label for="linkedin">
+          LinkedIn URL:
+          <input type="text" id="linkedin" name="linkedin">
+        </label>
+        <label for="email">
+          Email:
+          <input type="text" id="email" name="email">
+        </label>
+        <button id="submitBtn">Submit</button>    
+    
+    </main>
     
 </body>
 </html>
