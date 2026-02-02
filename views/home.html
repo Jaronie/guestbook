@@ -19,53 +19,31 @@
     <header>
       <h1>Contact Form</h1>
     </header>
-    <form id="guest-form">
-      <div id="labels"></div>
-      <label for="fname">
-        First Name:
-        <input type="text" id="fname" name="fname">
-      </label>
-      <label for="lname">
-        Last Name:
-        <input type="text" id="lname" name="lname">
-      </label>
-      <label for="Company">
-        Company:
-        <input type="text" id="Company" name="company">
-      </label>
-      <label for="linkedin">
-        LinkedIn URL:
-        <input type="text" id="linkedin" name="linkedin">
-      </label>
-      <label for="email">
-        Email:
-        <input type="text" id="email" name="email">
-      </label>
-      <select name="cars" id="cars">
-                <label for="cars">How did we meet?</label>
-<option value="none">Please select</option>
-<option value="placeholder">Placeholder</option>
-
-</select>
-      <label for="other">
-        Other (please specify):
-        <input type="text" id="other" name="other">
-      </label>
-      <label for="message">
-        Message:
-        <textarea id="message" name="message" rows="4" cols="50"></textarea>
-        <input type="checkbox" id="mailing-list" name="mailing-list" value="yes">
-        <label for="mailing-list">Add me to your mailing list</label>
-        <input type="radio" id="form-type"
-        name="form-type"
-        value="html">
-        <label for="form-type">HTML</label>
-        <input type="radio" id="form-type"
-        name="form-type"
-        value="text">
-        <label for="form-type">Text</label>
+    <section class="top"> <form id="guest-form" action="#" method="get"> <div class="field"> <label for="fname">First Name:</label> <input type="text" id="fname" name="fname"> </div> <div class="field"> <label for="lname">Last Name:</label> <input type="text" id="lname" name="lname"> </div> <div class="field"> <label for="job-title">Job Title:</label> <input type="text" id="job-title" name="job-title"> </div> <div class="field"> <label for="company">Company:</label> <input type="text" id="company" name="company"> </div> <div class="field"> <label for="linkedin">LinkedIn URL:</label> <input type="text" id="linkedin" name="linkedin"> </div> <div class="field"> <label for="email">Email:</label> <input type="text" id="email" name="email"> </div> </form> </section>
+          <label>How did we meet?</label>
+    <select name="meet" id="meet">
+      <option value="none">Please select</option>
+      <option value="placeholder">Placeholder</option>
+    </select>
+    </select>
+    <label for="other">
+      Other (please specify):
+      <input type="text" id="other" name="other">
+    </label>
+    <label for="message">
+      Message:
+    </label>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+    <input type="checkbox" id="mailing-list" name="mailing-list" value="yes">
+    <label for="mailing-list">Add me to your mailing list
+      <label for="form-type">Choose an email format:</label>
+    </label>
+    <input type="radio" id="form-type" name="form-type" value="html">
+    <label for="form-type">HTML</label>
+    <input type="radio" id="form-type" name="form-type" value="text">
+    <label for="form-type">Text</label>
     </form>
-    <button id="submitBtn">Submit</button>
+    <button id="submit-button">Submit</button>
   </main>
 
 
