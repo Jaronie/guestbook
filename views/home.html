@@ -29,31 +29,39 @@
         <div class="field"> <label for="job-title">Job Title:</label> <input type="text" id="job-title" name="job-title"> </div>
         <div class="field"> <label for="company">Company:</label> <input type="text" id="company" name="company"> </div>
         <div class="field"> <label for="linkedin">LinkedIn URL:</label> <input type="text" id="linkedin" name="linkedin"> </div>
-        <div class="field"> <label for="email">Email:</label> <input type="text" id="email" name="email"> </div>
-      </form>
+        <div class="field"> <label for="email">Email:</label> <input type="text" id="email" name="email">
+        </div>
     </section>
+    <section class="middle">
     <label>How did we meet?</label>
     <select name="meet" id="meet">
       <option value="none">Please select</option>
       <option value="placeholder">Placeholder</option>
     </select>
-    </select>
+
     <label for="other">
       Other (please specify):
       <input type="text" id="other" name="other">
     </label>
+  </section>
     <label for="message">
       Message:
     </label>
     <textarea id="message" name="message" rows="4" cols="50"></textarea>
-    <input type="checkbox" id="mailing-list" name="mailing-list" value="yes">
-    <label for="mailing-list">Add me to your mailing list
+    </section>
+    <section class="bottom">
+      <input type="checkbox" id="mailing-list" name="mailing-list" value="yes"> 
+      <label for="mailing-list">Add me to your mailing list
+      </label>
+      <br>
       <label for="form-type">Choose an email format:</label>
-    </label>
-    <input type="radio" id="form-type" name="form-type" value="html">
-    <label for="form-type">HTML</label>
-    <input type="radio" id="form-type" name="form-type" value="text">
-    <label for="form-type">Text</label>
+      <div class="radio-row">
+        <input type="radio" name="form-type" value="html">
+        <label for="form-type">HTML</label>
+        <input type="radio" name="form-type" value="text">
+        <label for="form-type">Text</label>
+      </div>
+    </section>
     </form>
     <button id="submit-button">Submit</button>
   </main>
