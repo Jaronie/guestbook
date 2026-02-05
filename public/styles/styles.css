@@ -11,7 +11,7 @@ background-color: white;
 border-radius: .45rem;
 max-width: 900px;
 margin: auto;
-padding: 3rem .65rem 1rem 1rem;
+padding: 3rem .65rem 1rem .65rem;
 }
 header {
 text-align: center;
@@ -30,6 +30,9 @@ border: 1px solid black;
 border-radius: .25rem;
 margin-bottom: 1rem;
 padding: .45rem;
+}
+input[type="checkbox"] {
+	accent-color: rgb(94, 168, 91);
 }
 .top form {
 	display: grid;
@@ -56,15 +59,16 @@ flex-direction: column;
 }
 
 
-.bottom label[for="form-type"] {
+.bottom label {
 	display: inline-block;
 	margin-right: 0.5rem;
-
+	margin-bottom: .25rem;
 }
 .bottom .radio-row {
 	display: inline-flex;
 	gap: 0.5rem;
-	align-items: center;
+	align-items: last baseline;
+
 }
 #submit-button {
 background-color: rgb(94, 168, 91);
