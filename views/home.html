@@ -22,52 +22,79 @@
       <h1>Contact Form</h1>
     </header>
     <section class="top">
+      <!-- form  -->
       <form id="guest-form" action="#" method="get">
-        <div class="field">
-          <label for="fname">First Name: <span class="err"id="err-fname">*First name required.</span></label>
 
+        <div class="field">
+          <!-- first name -->
+          <label for="fname">First Name: <span class="err" id="err-fname">*First name required.</span></label>
           <input type="text" id="fname" name="fname">
         </div>
-        <div class="field"> <label for="lname">Last Name:<span class="err" id="err-lname">*Last name required.</span></label> <input type="text" id="lname" name="lname"> </div>
-        <div class="field"> <label for="job-title">Job Title:</label> <input type="text" id="job-title" name="job-title"> </div>
-        <div class="field"> <label for="company">Company:</label> <input type="text" id="company" name="company"> </div>
-        <div class="field"> <label for="linkedin">LinkedIn URL:</label> <input type="text" id="linkedin" name="linkedin"> </div>
-        <div class="field"> <label for="email">Email:</label> <input type="text" id="email" name="email">
+        <!-- last name -->
+        <div class="field">
+          <label for="lname">Last Name: <span class="err" id="err-lname">*Last name required.</span>
+          </label>
+          <input type="text" id="lname" name="lname">
+        </div>
+        <!-- job title -->
+        <div class="field">
+          <label for="job-title">Job Title:</label>
+          <input type="text" id="job-title" name="job-title">
+        </div>
+        <!-- company -->
+        <div class="field">
+          <label for="company">Company:<span class="err" id="err-company">*Company required.</span></label> <input type="text" id="company" name="company">
+        </div>
+        <!-- linkedin -->
+        <div class="field">
+          <label for="linkedin">LinkedIn URL:<span class="err" id="err-linkedin">*LinkedIn URL required.</span></label> <input type="text" id="linkedin" name="linkedin">
+        </div>
+        <!-- email -->
+        <div class="field">
+          <label for="email">Email:<span class="err" id="err-email">*Email required.</span></label> <input type="text" id="email" name="email">
         </div>
     </section>
+    <!-- middle section -->
     <section class="middle">
-      <label>How did we meet?</label>
-      <select name="meet" id="meet">
+      <label>How did we meet?<span class="err" id="err-meet">*Please select an option.</span></label>
+      <select name="meet" id="meet" onclick="otherToggle()">
         <option value="none">Please select</option>
         <option value="placeholder">Placeholder</option>
+        <option value="other">Other</option>
       </select>
-
+      <!-- other -->
+       <div class="other-field">
       <label for="other">
         Other (please specify):
         <input type="text" id="other" name="other">
       </label>
+        </div>
     </section>
+
+    <!-- bottom section -->
     <label for="message">
       Message:
     </label>
     <textarea id="message" name="message" rows="4" cols="50"></textarea>
     </section>
+
+    <!-- mailing list -->
     <section class="bottom">
-      <input type="checkbox" id="mailing-list" name="mailing-list" value="yes" onclick="mailingListToggle()">
+      <input type="checkbox" id="mailing-list" name="mailing-list" value="yes" onclick="mailingListToggle()"> <!-- toggle function -->
       <label for="mailing-list">Add me to your mailing list
       </label>
       <br>
       <div class="email-format">
-      <label for="form-type">Choose an email format:</label>
-      <div class="radio-row">
-        <input type="radio" name="form-type" value="html">
-        <label for="form-type">HTML</label>
-        <input type="radio" name="form-type" value="text">
-        <label for="form-type">Text</label>
-      </div>
+        <label for="form-type">Choose an email format:</label>
+        <div class="radio-row">
+          <input type="radio" name="form-type" value="html">
+          <label for="form-type">HTML</label>
+          <input type="radio" name="form-type" value="text">
+          <label for="form-type">Text</label>
+        </div>
       </div>
     </section>
-        <button type="submit"id="submit-button">Submit</button>
+    <button type="submit" id="submit-button">Submit</button>
     </form>
 
   </main>
