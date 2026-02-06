@@ -8,7 +8,9 @@
   <!-- css file -->
   <link rel="stylesheet" href="/styles/styles.css">
   <!-- script -->
-  <script src="/js/app.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="/js/validation.js" defer>
+  </script>
   <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="/images/me.jpg">
 </head>
@@ -22,10 +24,11 @@
     <section class="top">
       <form id="guest-form" action="#" method="get">
         <div class="field">
-          <label for="fname">First Name:</label>
+          <label for="fname">First Name: <span class="err"id="err-fname">*First name required.</span></label>
+
           <input type="text" id="fname" name="fname">
         </div>
-        <div class="field"> <label for="lname">Last Name:</label> <input type="text" id="lname" name="lname"> </div>
+        <div class="field"> <label for="lname">Last Name:<span class="err" id="err-lname">*Last name required.</span></label> <input type="text" id="lname" name="lname"> </div>
         <div class="field"> <label for="job-title">Job Title:</label> <input type="text" id="job-title" name="job-title"> </div>
         <div class="field"> <label for="company">Company:</label> <input type="text" id="company" name="company"> </div>
         <div class="field"> <label for="linkedin">LinkedIn URL:</label> <input type="text" id="linkedin" name="linkedin"> </div>
@@ -33,27 +36,28 @@
         </div>
     </section>
     <section class="middle">
-    <label>How did we meet?</label>
-    <select name="meet" id="meet">
-      <option value="none">Please select</option>
-      <option value="placeholder">Placeholder</option>
-    </select>
+      <label>How did we meet?</label>
+      <select name="meet" id="meet">
+        <option value="none">Please select</option>
+        <option value="placeholder">Placeholder</option>
+      </select>
 
-    <label for="other">
-      Other (please specify):
-      <input type="text" id="other" name="other">
-    </label>
-  </section>
+      <label for="other">
+        Other (please specify):
+        <input type="text" id="other" name="other">
+      </label>
+    </section>
     <label for="message">
       Message:
     </label>
     <textarea id="message" name="message" rows="4" cols="50"></textarea>
     </section>
     <section class="bottom">
-      <input type="checkbox" id="mailing-list" name="mailing-list" value="yes"> 
+      <input type="checkbox" id="mailing-list" name="mailing-list" value="yes" onclick="mailingListToggle()">
       <label for="mailing-list">Add me to your mailing list
       </label>
       <br>
+      <div class="email-format">
       <label for="form-type">Choose an email format:</label>
       <div class="radio-row">
         <input type="radio" name="form-type" value="html">
@@ -61,9 +65,11 @@
         <input type="radio" name="form-type" value="text">
         <label for="form-type">Text</label>
       </div>
+      </div>
     </section>
+        <button type="submit"id="submit-button">Submit</button>
     </form>
-    <button id="submit-button">Submit</button>
+
   </main>
 
 
