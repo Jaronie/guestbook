@@ -14,7 +14,23 @@ function mailingListToggle(){
         emailFormat.style.display = "none";
     }
 }
+function otherToggle(){
+    // other field div class    
+    let otherField = document.querySelector(".other-field");
+    
+    // meet select element
+    let meetSelect = document.getElementById("meet");
 
+    // if other option is selected, show other field
+    if(meetSelect.value == "other"){
+        otherField.style.display = "block";
+    }
+    else {
+        otherField.style.display = "none";
+    }
+}
+
+// Validation functionality for form submission
 document.getElementById("guest-form").onsubmit = () => {
 
     clearErrors();
@@ -27,6 +43,10 @@ document.getElementById("guest-form").onsubmit = () => {
 
     if(!fname){
         document.getElementById("err-fname").style.display = "inline";
+        isValid = false;
+    }
+    if(!lname){
+        document.getElementById("err-lname").style.display = "inline";
         isValid = false;
     }
     return isValid;
