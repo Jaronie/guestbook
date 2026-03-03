@@ -35,10 +35,11 @@ app.post('/submit', (req, res) => {
     lname: req.body.lname,
     email: req.body.email,
     company: req.body.company,
-    job: req.body.job_title,
+    job: req.body['job-title'],
     linkedin: req.body.linkedin,
     meet: req.body.meet,
-    mail_function: req.body.mail_function
+    mail_function: req.body.mail_function,
+    timestamp: new Date()
 
   }
 
