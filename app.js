@@ -1,11 +1,12 @@
 // Import the express module
 import express from 'express';
 
-// ejs
-app.set('view engine', 'ejs');
 
 // Create an instance of an Express application
 const app = express();
+
+// ejs
+app.set('view engine', 'ejs');
 
 // Define the port number where our server will listen
 const PORT = 3004;
