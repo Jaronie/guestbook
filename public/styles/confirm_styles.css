@@ -13,3 +13,7 @@ max-width: 900px;
 margin: auto;
 padding: 3rem .65rem 1rem .65rem;
 }
+header {
+text-align: center;
+padding: .25rem;
+}

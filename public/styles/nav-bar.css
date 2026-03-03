@@ -1,0 +1,38 @@
+:root{
+--primary-color: rgb(94, 168, 91);
+--secondary-color: rgb(240, 226, 226);
+--accent-color: rgb(0,0,0);
+}
+
+.nav-header {
+background-color: white;
+width: 100%;
+margin: 0 0 1rem 0;
+
+}
+nav ul {
+display: flex;
+flex-direction: row;
+padding: .5rem;
+
+}
+nav ul li {
+list-style: none;
+background-color: var(--accent-color);
+margin: auto;
+padding: 10px 12px;
+}
+nav ul li a {
+color: white;
+text-decoration: none;
+}
+
+@media (max-width: 500px) {
+	nav ul {
+		flex-direction: column;
+		gap: .5rem;
+	}
+	nav ul li {
+		padding: 10px;
+	}
+}
