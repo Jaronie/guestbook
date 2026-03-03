@@ -8,6 +8,25 @@
     <title>Confirmation</title>
 </head>
 <body>
-    <h1>Thanks for your submission. I am excited to hear about you, and I look forward to connecting with you soon!</h1>
+    <main>
+    <header>
+      <h1>Contact Form Details</h1>
+    </header>
+    <section class="confirmation">
+        <h1>Thank you for your submission, <%= entry.fname %> <%= entry.lname %>!
+        </h1>
+            <p>I'll try my best to get back to you. Here's what you submitted:</p>
+    </section>
+    <div id = "confirmation-details">
+        <p><strong>First Name:</strong> <%= entry.fname %></p>
+        <p><strong>Last Name:</strong> <%= entry.lname %></p>
+        <p><strong>Email:</strong> <%= entry.email %></p>
+        <p><strong>Company:</strong> <%= entry.company %></p>
+        <p><strong>Job Title:</strong> <%= entry.job %></p>
+        <p><strong>LinkedIn URL:</strong> <%= entry.linkedin %></p>
+        <p><strong>How We Met:</strong> <%= entry.meet %></p>
+        <p><strong>Mail Type:</strong> <%= entry.mail_function %></p>
+    </div>
+    </main>
 </body>
 </html>
