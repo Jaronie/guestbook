@@ -1,6 +1,9 @@
 // Import the express module
 import express from 'express';
 
+// ejs
+app.set('view engine', 'ejs');
+
 // Create an instance of an Express application
 const app = express();
 
@@ -18,7 +21,7 @@ app.use(express.static('public'));
 
 // main homepage
 app.get('/', (req, res) => {
-  res.sendFile(`${import.meta.dirname}/views/home.html`);
+  res.render('home');
 });
 
 //
@@ -40,13 +43,14 @@ app.post('/submit', (req, res) => {
 
   entries.push(entry);
 
-  res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+res.render('confirmation', { entry })
+
 });
 
 //admin route
 app.get('/admin', (req, res) => {
-  res.send(entries)
-});;
+  res.render('admin', { entries })
+});
 
 // Start the server and listen on the specified port 
 app.listen(PORT, () => {
