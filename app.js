@@ -39,7 +39,7 @@ app.post('/submit', (req, res) => {
     linkedin: req.body.linkedin,
     meet: req.body.meet,
     message: req.body.message,
-    mail_function: req.body.mail_function,
+    mail_function: req.body.form_type,
     timestamp: new Date()
 
   }
