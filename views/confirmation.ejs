@@ -5,9 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="/images/me.jpg">
+    <!-- css file -->
+    <link rel="stylesheet" href="/styles/confirm_styles.css">
+    <link rel="stylesheet" href="/styles/nav-bar.css">
     <title>Confirmation</title>
 </head>
 <body>
+          <!--Nav Bar -->
+    <header class = "nav-header">
+      <nav>
+        <ul>
+          <li><a href="https://jaronie.github.io/jaron-bautista-portfolio/">Home</a></li>
+          <li><a href="http://24.199.115.154:3004">Contact Page</a></li>
+          <li><a href="/admin">Admin Page</a></li>
+          <li><a href="https://github.com/Jaronie/guestbook/">Github Repository</a></li>
+          <li><a href="https://www.linkedin.com/in/jaron-bautista">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </header>
+    
     <main>
     <header>
       <h1>Contact Form Details</h1>
@@ -25,7 +41,9 @@
         <p><strong>Job Title:</strong> <%= entry.job %></p>
         <p><strong>LinkedIn URL:</strong> <%= entry.linkedin %></p>
         <p><strong>How We Met:</strong> <%= entry.meet %></p>
-        <p><strong>Mail Type:</strong> <%= entry.mail_function %></p>
+        <p><strong>Message:</strong></p>
+        <article><%= (entry.message) ? entry.message : "No message provided" %></article>
+        <p><strong>Mail Type:</strong> <%= (entry.mail_function) ? entry.mail_function : "Opted out" %></p>
     </div>
     </main>
 </body>
