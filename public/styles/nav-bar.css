@@ -18,9 +18,10 @@ padding: .5rem;
 }
 nav ul li {
 list-style: none;
-background-color: var(--accent-color);
+background-color: var(--primary-color);
 margin: auto;
 padding: 10px 12px;
+border-radius: .5rem;
 }
 nav ul li a {
 color: white;
