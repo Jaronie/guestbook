@@ -38,6 +38,7 @@ app.post('/submit', (req, res) => {
     job: req.body['job-title'],
     linkedin: req.body.linkedin,
     meet: req.body.meet,
+    message: req.body.message,
     mail_function: req.body.mail_function,
     timestamp: new Date()
 
