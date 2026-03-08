@@ -22,25 +22,22 @@
             checkbox_visible
         }
     }
-function otherToggle(){
-    // other field div class    
-    let other_field = document.querySelector(".other-field");
-    
-    // meet select element
+function otherToggle() {
     const meet = document.getElementById("meet");
+    const otherField = document.querySelector(".other-field");
 
-    // if other option is selected, show other field
-    if(meet.value == "other"){
-        other_field.style.display = "block";
-
-    }
-    else {
-        other_field.style.display = "none";
+    if (meet.value === "other") {
+        otherField.style.display = "block";
+    } else {
+        otherField.style.display = "none";
     }
 }
 
+
 // Validation functionality for form submission
 document.getElementById("guest-form").onsubmit = () => {
+    console.log("meet:", req.body.meet);
+console.log("other:", req.body.other);
 
     clearErrors();
 
@@ -94,12 +91,22 @@ document.getElementById("guest-form").onsubmit = () => {
         isValid = false;
     }
 }
-    if (meet.value === "other" && other.value.trim() !== "") {
-    meet.value = other.value.trim();   //replace "other" with actual text
+if (meet.value === "other") {
+    if (other.value.trim() !== "") {
+        meet.value = other.value.trim();
+    } else {
+        document.getElementById("err-meet").style.display = "inline";
+        isValid = false;
+    }
+}
+
+if (meet.value === "other" && other.value.trim() !== "") {
+    meet.value = other.value.trim();
 }
 
     return isValid;
 }
+
 
 function clearErrors(){
     let errors = document.getElementsByClassName("err");

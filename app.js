@@ -46,6 +46,10 @@ app.get('/', (req, res) => {
 app.post('/submit', async (req, res) => {
 
   try{
+  let hwm = req.body.meet;
+  if (hwm === "other") {
+    hwm = req.body.other;
+  }
   const entry = {
     first_name: req.body.fname,
     last_name: req.body.lname,
@@ -53,7 +57,7 @@ app.post('/submit', async (req, res) => {
     company: req.body.company,
     job_title: req.body['job-title'],
     linkedin: req.body.linkedin,
-    hwm: req.body.meet,
+    hwm: hwm,
     message: req.body.message,
     mail_type: req.body['form-type'],
     timestamp: new Date()
