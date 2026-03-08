@@ -1,6 +1,21 @@
 // Import the express module
 import express from 'express';
 
+import mysql2 from 'mysql2';
+
+import dotenv from 'dotenv';
+
+//config dotenv
+dotenv.config();
+
+// create a connection pool with mySQL
+const pool = mysql2.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+}).promise();
+
 
 // Create an instance of an Express application
 const app = express();
@@ -51,8 +66,17 @@ res.render('confirmation', { entry })
 });
 
 //admin route
-app.get('/admin', (req, res) => {
+app.get('/admin', async (req, res) => {
+      try {
+    const [orders] = await pool.query('SELECT * FROM submissions');
+    // render admin page
+    res.render('admin', { entries : orders });
+    console.log("Database Connected!")
+  } catch (err) {
+    console.error('Database error:', err);
+    res.status(500).send('Database error: ' + err.message);
   res.render('admin', { entries })
+  }
 });
 
 // Start the server and listen on the specified port 
