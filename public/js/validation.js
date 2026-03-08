@@ -32,6 +32,7 @@ function otherToggle(){
     // if other option is selected, show other field
     if(meet.value == "other"){
         other_field.style.display = "block";
+
     }
     else {
         other_field.style.display = "none";
@@ -52,9 +53,10 @@ document.getElementById("guest-form").onsubmit = () => {
     let job = document.getElementById("job-title").value;
     let linkedin = document.getElementById("linkedin").value;
     let mail_function = mailingListToggle();
+    let meet = document.getElementById("meet");
+    let other = document.getElementById("other");
 
-
-    let n = email.search(/@/);
+    let n = email.search(/@/); // email validation
     let dot = email.lastIndexOf(".");
 
     if(!fname){
@@ -85,6 +87,16 @@ document.getElementById("guest-form").onsubmit = () => {
         document.getElementById("err-job-title").style.display = "inline";
         isValid = false;
     }
+    
+    if (meet.value === "other") {
+    if (!other.value.trim()) {
+        document.getElementById("err-meet").style.display = "inline";
+        isValid = false;
+    }
+}
+    if (meet.value === "other" && other.value.trim() !== "") {
+    meet.value = other.value.trim();   //replace "other" with actual text
+}
 
     return isValid;
 }
