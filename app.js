@@ -43,27 +43,61 @@ app.get('/', (req, res) => {
 //
 
 // form submissions sent to JSON object
-app.post('/submit', (req, res) => {
+app.post('/submit', async (req, res) => {
 
+  try{
   const entry = {
-    fname: req.body.fname,
-    lname: req.body.lname,
+    first_name: req.body.fname,
+    last_name: req.body.lname,
     email: req.body.email,
     company: req.body.company,
-    job: req.body['job-title'],
+    job_title: req.body['job-title'],
     linkedin: req.body.linkedin,
-    meet: req.body.meet,
+    hwm: req.body.meet,
     message: req.body.message,
-    mail_function: req.body['form-type'],
+    mail_type: req.body['form-type'],
     timestamp: new Date()
+  };
+  
+  console.log("Received form submission:", entry);
+
+  //sql query
+  const sql = 'INSERT INTO submissions (first_name, last_name, email, company, job_title, linkedin,hwm, message, mail_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  const values = [
+    entry.first_name, 
+    entry.last_name, 
+    entry.email, 
+    entry.company, 
+    entry.job_title, 
+    entry.linkedin,
+    entry.hwm, 
+    entry.message, 
+    entry.mail_type
+  ];
+  const result = await pool.execute(sql, values);
+  console.log("Database insertion result ID:", result[0].insertId);
+
+    entries.push(entry);
+  res.render('confirmation', { entry })
 
   }
-
-  entries.push(entry);
-
-res.render('confirmation', { entry })
+  catch (err) {
+    console.log('Database error:', err);
+    res.status(500).send('Database error: ' + err.message);
+  }
 
 });
+
+//test database
+app.get('/db-test', async(req,res) => {
+  try {
+    const submission = await pool.query('SELECT * FROM submissions');
+    res.send(submission[0]); 
+  } catch (err){
+    console.log('Database error:', err);
+    res.status(500).send('Database error: ' + err.message);
+  }
+})
 
 //admin route
 app.get('/admin', async (req, res) => {
